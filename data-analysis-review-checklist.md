@@ -23,35 +23,53 @@
 - [x] **Community guidelines:** Are there clear guidelines for third parties wishing to 1) Contribute to the software 2) Report issues or problems with the software 3) Seek support
 
 ### Code quality
-- [x] **Readability:** Are scripts, functions, objects, etc., well named? Is it relatively easy to understand the code?
+- [ ] **Readability:** Are scripts, functions, objects, etc., well named? Is it relatively easy to understand the code?
 - [x] **Style guidelides:** Does the code adhere to well known language style guides?
 - [x] **Modularity:** Is the code suitably abstracted into scripts and functions?
 - [ ] **Tests:** Are there automated tests or manual steps described so that the function of the software can be verified? Are they of sufficient quality to ensure software robsutness?
 
 ### Reproducibility
  
-- [ ] **Data:** Is the raw data archived somewhere? Is it accessible?
-- [ ] **Computational methods:** Is all the source code required for the data analysis available?
-- [ ] **Conditions:** Is there a record of the necessary conditions (software dependencies) needed to reproduce the analysis? Does there exist an easy way to obtain the computational environment needed to reproduce the analysis?
-- [ ] **Automation:** Can someone other than the authors easily reproduce the entire data analysis?
+- [x] **Data:** Is the raw data archived somewhere? Is it accessible?
+- [x] **Computational methods:** Is all the source code required for the data analysis available?
+- [x] **Conditions:** Is there a record of the necessary conditions (software dependencies) needed to reproduce the analysis? Does there exist an easy way to obtain the computational environment needed to reproduce the analysis?
+- [x] **Automation:** Can someone other than the authors easily reproduce the entire data analysis?
 
 ### Analysis report
 
-- [ ] **Authors:** Does the report include a list of authors with their affiliations?
-- [ ] **What is the question:** Do the authors clearly state the research question being asked?
-- [ ] **Importance:** Do the authors clearly state the importance for this research question?
-- [ ] **Background**: Do the authors provide sufficient background information so that readers can understand the report?
-- [ ] **Methods:** Do the authors clearly describe and justify the methodology used in the data analysis? Do the authors communicate any assumptions or limitations of their methodologies?
-- [ ] **Results:** Do the authors clearly communicate their findings through writing, tables and figures?
-- [ ] **Conclusions:** Are the conclusions presented by the authors correct? 
-- [ ] **References:** Do all archival references that should have a DOI list one (e.g., papers, datasets, software)?
-- [ ] **Writing quality:** Is the writing of good quality, concise, engaging? 
+- [x] **Authors:** Does the report include a list of authors with their affiliations?
+- [x] **What is the question:** Do the authors clearly state the research question being asked?
+- [x] **Importance:** Do the authors clearly state the importance for this research question?
+- [x] **Background**: Do the authors provide sufficient background information so that readers can understand the report?
+- [x] **Methods:** Do the authors clearly describe and justify the methodology used in the data analysis? Do the authors communicate any assumptions or limitations of their methodologies?
+- [x] **Results:** Do the authors clearly communicate their findings through writing, tables and figures?
+- [x] **Conclusions:** Are the conclusions presented by the authors correct? 
+- [x] **References:** Do all archival references that should have a DOI list one (e.g., papers, datasets, software)?
+- [x] **Writing quality:** Is the writing of good quality, concise, engaging? 
 
 ### Estimated hours spent reviewing: 
+
+1.5 hours
 
 ### Review Comments: 
 
 Please provide more detailed feedback here on what was done particularly well, and what could be improved. It is especially important to elaborate on items that you were not able to check off in the list above.
+
+- As shown in the image below, the `src` directory only contains 1 file. In that case, all test cases trying to call the helpers from `src/` would not be executed, as they will fail in the dependency import stage (most likely).
+![image](https://github.com/zywkloo/data-analysis-review-checklist/assets/18610590/5f27579d-1745-4982-9e79-f12ca5daa0ed)
+- The test files could have more consistent naming standard, like `test-word1_word2_word3.py`<img width="325" alt="image" src="https://github.com/zywkloo/data-analysis-review-checklist/assets/18610590/b7183e15-447b-4556-9597-8b0ec3bc78dd">
+
+- May consider referencing the `environment.yaml` in the docker file, to enhance the code reusability.
+  For example:
+```
+  FROM quay.io/jupyter/minimal-notebook:2023-11-22
+
+  WORKDIR /home/jovyan
+  
+  COPY environment.yaml .
+  
+  RUN conda env update --file environment.yaml
+```
 
 #### Attribution
 
