@@ -55,11 +55,12 @@
 
 Please provide more detailed feedback here on what was done particularly well, and what could be improved. It is especially important to elaborate on items that you were not able to check off in the list above.
 
-- As shown in the image below, the `src` directory only contains 1 file. In that case, all test cases trying to call the helpers from `src/` would not be executed, as they will fail in the dependency import stage (most likely).
+1. As shown in the image below, the `src` directory only contains 1 file. In that case, all test cases trying to call the helpers from `src/` would not be executed, as they will fail in the dependency import stage (most likely).
 ![image](https://github.com/zywkloo/data-analysis-review-checklist/assets/18610590/5f27579d-1745-4982-9e79-f12ca5daa0ed)
-- The test files could have more consistent naming standard, like `test-word1_word2_word3.py`<img width="325" alt="image" src="https://github.com/zywkloo/data-analysis-review-checklist/assets/18610590/b7183e15-447b-4556-9597-8b0ec3bc78dd">
 
-- May consider referencing the `environment.yaml` in the docker file, to enhance the code reusability.
+2. The test files could have more consistent naming standard, like `test-word1_word2_word3.py`<img width="325" alt="image" src="https://github.com/zywkloo/data-analysis-review-checklist/assets/18610590/b7183e15-447b-4556-9597-8b0ec3bc78dd">
+
+3. May consider referencing the `environment.yaml` in the docker file, to enhance the code reusability.
   For example:
 ```
   FROM quay.io/jupyter/minimal-notebook:2023-11-22
@@ -70,6 +71,7 @@ Please provide more detailed feedback here on what was done particularly well, a
   
   RUN conda env update --file environment.yaml
 ```
+Despite some minor naming and importing issues, this project stands out for comprehensive documentation, code quality, reproducibility, and thorough analysis reporting.
 
 #### Attribution
 
