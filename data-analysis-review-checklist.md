@@ -1,6 +1,6 @@
 ## Data analysis review checklist
 
-### Reviewer: <GITHUB_USERNAME> 
+### Reviewer: zywkloo
 
 ### Conflict of interest
 
